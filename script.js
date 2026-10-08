@@ -77,3 +77,118 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    // ==========================================
+    // LÓGICA DEL SIDEBAR COLAPSABLE Y SCROLLSPY
+    // ==========================================
+    // Principio 8: Minimizar coste de acceso.
+    // Principio 11: ScrollSpy para mostrar en dónde se encuentra el usuario.
+
+    const sidebar = document.getElementById('sidebar');
+    const sidebarWrapper = document.getElementById('sidebar-wrapper');
+    const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+    const desktopToggleBtn = document.getElementById('desktopToggleBtn');
+    const sidebarIconMobile = document.getElementById('sidebarIconMobile');
+    const sidebarIconDesktop = document.getElementById('sidebarIconDesktop');
+    const spyLinks = document.querySelectorAll('.spy-link');
+    
+    // Secciones a observar
+    const sections = [
+        document.getElementById('equipo'),
+        document.getElementById('vr-project'),
+        document.getElementById('fase1'),
+        document.getElementById('fase2'),
+        document.getElementById('fase3'),
+        document.getElementById('fase4'),
+        document.getElementById('fase5'),
+        document.getElementById('mobile-project')
+    ];
+
+    let isSidebarExpanded = false;
+
+    const toggleSidebar = () => {
+        isSidebarExpanded = !isSidebarExpanded;
+        if(isSidebarExpanded) {
+            sidebar.classList.add('sidebar-expanded');
+            if(sidebarIconDesktop) sidebarIconDesktop.classList.add('rotate-180-custom');
+        } else {
+            sidebar.classList.remove('sidebar-expanded');
+            if(sidebarIconDesktop) sidebarIconDesktop.classList.remove('rotate-180-custom');
+        }
+    };
+
+    const toggleMobileSidebar = () => {
+        const isHidden = sidebarWrapper.classList.contains('-translate-x-full');
+        if(isHidden) {
+            sidebarWrapper.classList.remove('-translate-x-full');
+            if(sidebarIconMobile) sidebarIconMobile.classList.add('rotate-180-custom');
+        } else {
+            sidebarWrapper.classList.add('-translate-x-full');
+            if(sidebarIconMobile) sidebarIconMobile.classList.remove('rotate-180-custom');
+            // Si estaba expandido en texto, colapsarlo también
+            if(isSidebarExpanded) toggleSidebar();
+        }
+    };
+
+    if(desktopToggleBtn) desktopToggleBtn.addEventListener('click', toggleSidebar);
+    if(toggleSidebarBtn) toggleSidebarBtn.addEventListener('click', toggleMobileSidebar);
+
+    // ScrollSpy nativo con IntersectionObserver (Principio 11)
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const scrollSpyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.target.id) {
+                // Remover active de todos
+                spyLinks.forEach(link => link.classList.remove('active'));
+                
+                // Añadir active al correspondiente
+                const activeLink = document.querySelector(`.spy-link[href="#${entry.target.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    
+                    // Si el elemento es una fase (fase1, fase2...), también iluminar 'vr-project' de forma sutil
+                    if(entry.target.id.startsWith('fase')) {
+                         const parentLink = document.querySelector('.spy-link[href="#vr-project"]');
+                         if(parentLink) parentLink.classList.add('active');
+                    }
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(sec => {
+        if(sec) scrollSpyObserver.observe(sec);
+    });
+
+    // ==========================================
+    // LÓGICA DEL BOTÓN BACK TO TOP
+    // ==========================================
+    // Principio 12: Ayuda predictiva.
+    
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    if(backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                // Mostrar botón (quita translateY y pone opacity 1)
+                backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
+                backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                // Ocultar botón
+                backToTopBtn.classList.add('translate-y-24', 'opacity-0');
+                backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }

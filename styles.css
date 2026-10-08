@@ -85,3 +85,37 @@ html {
     background-color: #0284c7; /* bg-sulley */
     width: 1.5rem; /* Expansión visual para indicar el estado activo */
 }
+
+/* ========================================== */
+/* Estilos para el Scrollspy (Principio 11)   */
+/* ========================================== */
+.spy-link.active {
+    color: #0284c7; /* sulley */
+    background-color: rgba(56, 189, 248, 0.1); /* sulleyLight/10 */
+    font-weight: 700;
+}
+.spy-link.active i {
+    color: #84cc16; /* mike - resalte verde */
+}
+
+/* Transiciones suaves para la barra lateral (Principio 8) */
+.sidebar-text {
+    display: inline-block;
+    white-space: nowrap;
+}
+.sidebar-expanded {
+    width: 16rem !important; /* w-64 */
+}
+.sidebar-expanded .sidebar-text {
+    opacity: 1 !important;
+    width: auto !important;
+    display: inline-block !important;
+}
+.sidebar-expanded #sidebar-sub {
+    display: flex !important;
+}
+
+/* Modificadores de la flecha */
+.rotate-180-custom {
+    transform: rotate(180deg);
+}

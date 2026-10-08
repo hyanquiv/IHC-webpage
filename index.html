@@ -32,6 +32,39 @@
 </head>
 <body class="bg-cream text-randall font-sans antialiased pt-20">
 
+    <!-- Principio 8: Minimizar coste de acceso (Índice de Navegación Lateral Colapsable) -->
+    <!-- Principio 11: Reemplazamiento de memoria por conocimiento en el mundo (ScrollSpy activo) -->
+    <div id="sidebar-wrapper" class="fixed left-0 top-1/4 z-40 flex items-center transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+        <aside id="sidebar" class="bg-white shadow-[4px_4px_15px_rgba(0,0,0,0.1)] rounded-r-2xl border-y border-r border-sulley/20 transition-all duration-300 w-16 overflow-hidden h-auto py-4 flex flex-col group">
+            <nav id="scrollspyNav" class="flex flex-col gap-2 px-2">
+                <!-- Principio 4: Mejora por redundancia (Ícono + Texto) -->
+                <a href="#equipo" class="spy-link flex items-center gap-4 p-2 rounded-xl text-gray-500 hover:bg-sulleyLight/20 hover:text-sulley transition whitespace-nowrap" title="El Equipo">
+                    <i class="fa-solid fa-users w-6 text-center text-xl"></i> <span class="sidebar-text opacity-0 w-0 hidden transition-opacity duration-300 font-bold">El Equipo</span>
+                </a>
+                <a href="#vr-project" class="spy-link flex items-center gap-4 p-2 rounded-xl text-gray-500 hover:bg-sulleyLight/20 hover:text-sulley transition whitespace-nowrap" title="Proyecto VR">
+                    <i class="fa-solid fa-vr-cardboard w-6 text-center text-xl"></i> <span class="sidebar-text opacity-0 w-0 hidden transition-opacity duration-300 font-bold">Proyecto VR</span>
+                </a>
+                <div id="sidebar-sub" class="flex-col pl-4 gap-1 border-l-2 border-gray-200 ml-5 hidden transition-all">
+                    <a href="#fase1" class="spy-link text-xs py-1 text-gray-400 hover:text-mike whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fase 1</a>
+                    <a href="#fase2" class="spy-link text-xs py-1 text-gray-400 hover:text-mike whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fase 2</a>
+                    <a href="#fase3" class="spy-link text-xs py-1 text-gray-400 hover:text-mike whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fase 3</a>
+                    <a href="#fase4" class="spy-link text-xs py-1 text-gray-400 hover:text-mike whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fase 4</a>
+                    <a href="#fase5" class="spy-link text-xs py-1 text-gray-400 hover:text-mike whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fase 5</a>
+                </div>
+                <a href="#mobile-project" class="spy-link flex items-center gap-4 p-2 rounded-xl text-gray-500 hover:bg-sulleyLight/20 hover:text-sulley transition whitespace-nowrap" title="Proyecto Móvil">
+                    <i class="fa-solid fa-mobile-screen w-6 text-center text-xl"></i> <span class="sidebar-text opacity-0 w-0 hidden transition-opacity duration-300 font-bold">Proyecto Móvil</span>
+                </a>
+            </nav>
+        </aside>
+        <button id="toggleSidebarBtn" class="bg-sulley text-white w-8 h-12 rounded-r-lg shadow-md flex items-center justify-center hover:bg-sulleyLight transition-colors md:hidden" title="Abrir Índice">
+            <i class="fa-solid fa-chevron-right transition-transform" id="sidebarIconMobile"></i>
+        </button>
+        <button id="desktopToggleBtn" class="bg-sulley text-white w-6 h-10 rounded-r-lg shadow-md hidden md:flex items-center justify-center hover:bg-sulleyLight transition-colors absolute -right-6" title="Expandir Índice">
+            <i class="fa-solid fa-chevron-right text-xs transition-transform" id="sidebarIconDesktop"></i>
+        </button>
+    </div>
+
+
     <!-- Principio 8: Minimizar coste de acceso (Menú fijo) -->
     <!-- Principio 13: Consistencia (Navegación siempre en el mismo lugar y estilo consistente) -->
     <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
@@ -117,7 +150,7 @@
                 <div class="timeline-container relative border-l-4 border-sulleyLight ml-4 md:ml-12 pl-8 md:pl-12 space-y-16">
                     
                     <!-- Fase 1 -->
-                    <div class="timeline-item relative">
+                    <div id="fase1" class="timeline-item relative scroll-mt-24">
                         <!-- Nodo visual del stepper -->
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">1</div>
                         <h3 class="text-2xl font-bold mb-4">Fase 1: Lluvia de ideas</h3>
@@ -132,7 +165,7 @@
                     </div>
 
                     <!-- Fase 2 -->
-                    <div class="timeline-item relative">
+                    <div id="fase2" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">2</div>
                         <h3 class="text-2xl font-bold mb-4">Fase 2: Storytelling & Bocetos</h3>
                         <p class="mb-4 text-gray-600">Diseño en papel de los escenarios y primeros flujos de usuario.</p>
@@ -186,7 +219,7 @@
 
                     <!-- Fase 3 -->
                     <!-- Principio 5: Similitud - Agrupando de manera distinta elementos de UI diferentes (Testimonios con diseño de tarjeta y comillas vs Video) -->
-                    <div class="timeline-item relative">
+                    <div id="fase3" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">3</div>
                         <h3 class="text-2xl font-bold mb-4">Fase 3: Testing Temprano (Campus)</h3>
                         <p class="mb-4 text-gray-600">Pruebas de usabilidad y test de usuarios en el campus con headset Oculus.</p>
@@ -218,7 +251,7 @@
                     </div>
 
                     <!-- Fase 4 -->
-                    <div class="timeline-item relative">
+                    <div id="fase4" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">4</div>
                         <h3 class="text-2xl font-bold mb-4">Fase 4: POV & Gameplay</h3>
                         <p class="mb-4 text-gray-600">Versión estable e iterada del proyecto tras aplicar el feedback de los testing.</p>
@@ -229,7 +262,7 @@
                     </div>
 
                     <!-- Fase 5 -->
-                    <div class="timeline-item relative">
+                    <div id="fase5" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-mike w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">
                             <i class="fa-solid fa-flag-checkered"></i>
                         </div>
@@ -293,6 +326,12 @@
         </div>
     </footer>
 
+
+    <!-- Principio 12: Ayuda predictiva (Anticipa el deseo de regresar arriba) -->
+    <!-- Principio 1: Legibilidad (Color verde Mike Wazowski sobre fondo, alto contraste y forma reconocible) -->
+    <button id="backToTopBtn" class="fixed bottom-6 right-6 z-50 bg-mike hover:bg-mikeHover text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(132,204,22,0.5)] transform translate-y-24 opacity-0 transition-all duration-500 focus:outline-none focus:ring-4 focus:ring-mike/50" aria-label="Volver al inicio" title="Volver al inicio">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </button>
     <script src="script.js"></script>
 </body>
 </html>
