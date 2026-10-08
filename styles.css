@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* 
+ * Principios y Consideraciones de CSS:
+ * Principio 1: Legibilidad y enfoque. Evitamos saltos bruscos en el scroll (smooth behavior)
+ * Principio 13: Consistencia. Mantenemos el aspecto de los videos igualitario usando un contenedor wrapper.
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Utilidad para hacer los videos/iframes (YouTube/Vimeo) responsive 
+   manteniendo estrictamente el aspect ratio 16:9 */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+}
+
+.video-responsive i.fa-regular,
+.video-responsive i.fa-solid,
+.video-responsive i.fa-brands,
+.video-responsive span,
+.video-responsive iframe,
+.video-responsive video {
+    position: absolute;
+    /* Elementos centrados (iconos de placeholder) */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-responsive span {
+    /* Reposicionar el badge a la esquina inferior izquierda */
+    top: auto;
+    left: 1rem;
+    bottom: 1rem;
+    transform: none;
+}
+
+.video-responsive iframe,
+.video-responsive video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: none;
+}
+
+/* Conector visual de la línea de tiempo */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2px; /* Alineación con el borde */
+    width: 4px;
+    background-color: #38bdf8; /* bg-sulleyLight */
+    z-index: 0;
+    border-radius: 4px;
+}
+
+.timeline-item {
+    z-index: 1;
+}
+
+/* Transición suave para el carrusel de bocetos */
+.carousel-track {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carousel-slide {
+    /* Evita que los textos dentro se seleccionen accidentalmente al hacer click */
+    user-select: none;
+}
+
+/* Estilos dinámicos para los indicadores del carrusel */
+.indicator {
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #0284c7; /* bg-sulley */
+    width: 1.5rem; /* Expansión visual para indicar el estado activo */
+}

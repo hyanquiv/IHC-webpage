@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barberos Inc | Portafolio IHC</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sulley: '#0284c7', // Primary Blue
+                        sulleyLight: '#38bdf8',
+                        mike: '#84cc16',   // Accent Green
+                        mikeHover: '#65a30d',
+                        cream: '#f8fafc',  // Background
+                        randall: '#312e81', // Dark text / purple
+                        grayMuted: '#94a3b8' // For disabled state
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cream text-randall font-sans antialiased pt-20">
+
+    <!-- Principio 8: Minimizar coste de acceso (Menú fijo) -->
+    <!-- Principio 13: Consistencia (Navegación siempre en el mismo lugar y estilo consistente) -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-door-open text-3xl text-sulley"></i>
+                    <span class="font-bold text-2xl tracking-tight text-sulley">BARBEROS <span class="text-mike">INC.</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <!-- Principio 4: Redundancia (Ícono + Texto) -->
+                    <!-- Principio 1: Legibilidad (Alto contraste de texto sobre fondo blanco) -->
+                    <a href="#equipo" class="text-randall hover:text-sulley font-semibold transition flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i> El Equipo
+                    </a>
+                    <a href="#vr-project" class="text-randall hover:text-sulley font-semibold transition flex items-center gap-2">
+                        <i class="fa-solid fa-vr-cardboard"></i> Proyecto VR
+                    </a>
+                    <a href="#mobile-project" class="text-randall hover:text-sulley font-semibold transition flex items-center gap-2">
+                        <i class="fa-solid fa-mobile-screen"></i> Proyecto Móvil
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN A: Hero & El Equipo -->
+        <section id="equipo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-sulley mb-6">
+                    Bienvenidos a <span class="text-mike">Barberos Inc.</span>
+                </h1>
+                <p class="text-xl text-randall opacity-80 max-w-3xl mx-auto">
+                    "Asustamos" la mala usabilidad y "cortamos" los problemas de experiencia de usuario. 
+                    Somos un equipo dedicado a crear interfaces accesibles, intuitivas y monstruosamente geniales.
+                </p>
+            </div>
+
+            <!-- Principio 9: Compatibilidad por proximidad (Elementos relacionados están cerca) -->
+            <!-- Ley de Semejanza (Gestalt): Las tarjetas tienen un diseño idéntico visual para agrupar roles similares -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border-t-4 border-sulley hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-sulleyLight rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Henry Aron Yanqui Vera</h3>
+                    <p class="text-sm font-medium text-gray-500">Investigador UX / Especialista IHC</p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border-t-4 border-mike hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-mike rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Anthony Aroni Jarata</h3>
+                    <p class="text-sm font-medium text-gray-500">Desarrollador UI / Prototipador VR</p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border-t-4 border-sulley hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-sulleyLight rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl">
+                        <i class="fa-solid fa-user-ninja"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Luis Alberto Ccalluchi Lopez</h3>
+                    <p class="text-sm font-medium text-gray-500">Analista de Usabilidad / QA</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN B: Proyecto VR -->
+        <section id="vr-project" class="bg-white py-20 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-sulley mb-4 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-vr-cardboard"></i> Proyecto 1: Videojuego VR
+                    </h2>
+                    <span class="inline-block bg-mike text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-sm">
+                        <i class="fa-solid fa-check-circle mr-1"></i> COMPLETADO
+                    </span>
+                </div>
+
+                <!-- Principio 3: Procesamiento top-down (Línea de tiempo vertical para mostrar un progreso cronológico lógico) -->
+                <div class="timeline-container relative border-l-4 border-sulleyLight ml-4 md:ml-12 pl-8 md:pl-12 space-y-16">
+                    
+                    <!-- Fase 1 -->
+                    <div class="timeline-item relative">
+                        <!-- Nodo visual del stepper -->
+                        <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">1</div>
+                        <h3 class="text-2xl font-bold mb-4">Fase 1: Lluvia de ideas</h3>
+                        <p class="mb-4 text-gray-600">Definición del problema, modelo mental y sesión de ideación colaborativa.</p>
+                        <div class="bg-cream p-4 rounded-xl border border-gray-200">
+                            <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden group">
+                                <i class="fa-solid fa-image text-5xl text-gray-400"></i>
+                                <span class="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded text-sm backdrop-blur-sm">Tablero de Miro</span>
+                            </div>
+                            <p class="text-sm text-center mt-3 text-gray-500 italic">Mapa mental y afinidad de ideas para el entorno virtual.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fase 2 -->
+                    <div class="timeline-item relative">
+                        <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">2</div>
+                        <h3 class="text-2xl font-bold mb-4">Fase 2: Storytelling & Bocetos</h3>
+                        <p class="mb-4 text-gray-600">Diseño en papel de los escenarios y primeros flujos de usuario.</p>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- Principio 11: Reemplazamiento de memoria por conocimiento en el mundo (Controles visuales explícitos < > en lugar de requerir que el usuario adivine gestos) -->
+                            <div class="carousel-container relative bg-white p-2 rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                                <div class="carousel-track flex transition-transform duration-300 ease-in-out h-full" id="carouselTrack">
+                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-100 flex items-center justify-center rounded-lg">
+                                        <div class="text-center">
+                                            <i class="fa-solid fa-pencil text-4xl text-gray-400 mb-2"></i>
+                                            <p class="font-medium text-gray-500">Boceto 1: Lobby</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-200 flex items-center justify-center rounded-lg">
+                                        <div class="text-center">
+                                            <i class="fa-solid fa-pen-ruler text-4xl text-gray-400 mb-2"></i>
+                                            <p class="font-medium text-gray-500">Boceto 2: Nivel Principal</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-300 flex items-center justify-center rounded-lg">
+                                        <div class="text-center">
+                                            <i class="fa-solid fa-compass-drafting text-4xl text-gray-500 mb-2"></i>
+                                            <p class="font-medium text-gray-600">Boceto 3: Menú de Pausa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Controles visuales (botones) -->
+                                <button id="btnPrev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-sulley/90 hover:bg-sulley text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sulley" aria-label="Boceto anterior">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button id="btnNext" class="absolute right-4 top-1/2 -translate-y-1/2 bg-sulley/90 hover:bg-sulley text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sulley" aria-label="Siguiente boceto">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                                
+                                <div class="absolute bottom-4 left-0 right-0 text-center z-10" id="carouselIndicators">
+                                    <button class="inline-block w-6 h-2 rounded-full bg-sulley mx-1 indicator active focus:outline-none" aria-label="Ir a boceto 1"></button>
+                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a boceto 2"></button>
+                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a boceto 3"></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Placeholder Video Interactuando -->
+                            <div class="video-responsive bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center relative">
+                                <i class="fa-regular fa-circle-play text-6xl text-white/50 hover:text-white/80 transition cursor-pointer"></i>
+                                <span class="absolute bottom-4 left-4 text-white text-sm font-medium bg-black/60 px-3 py-1 rounded backdrop-blur-sm">Usuario interactuando con bocetos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fase 3 -->
+                    <!-- Principio 5: Similitud - Agrupando de manera distinta elementos de UI diferentes (Testimonios con diseño de tarjeta y comillas vs Video) -->
+                    <div class="timeline-item relative">
+                        <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">3</div>
+                        <h3 class="text-2xl font-bold mb-4">Fase 3: Testing Temprano (Campus)</h3>
+                        <p class="mb-4 text-gray-600">Pruebas de usabilidad y test de usuarios en el campus con headset Oculus.</p>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="lg:col-span-2 video-responsive bg-slate-800 rounded-xl overflow-hidden flex items-center justify-center relative border border-gray-700">
+                                <i class="fa-solid fa-vr-cardboard text-6xl text-white/30"></i>
+                                <span class="absolute bottom-4 left-4 text-white text-sm font-medium bg-black/60 px-3 py-1 rounded backdrop-blur-sm">Sesión de Testing Oculus</span>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm relative h-full flex flex-col justify-center">
+                                    <i class="fa-solid fa-quote-left absolute text-4xl text-sulleyLight opacity-10 top-3 left-3"></i>
+                                    <p class="italic text-sm text-gray-600 relative z-10">"La navegación inicial fue confusa, no encontraba cómo abrir el inventario."</p>
+                                    <div class="mt-4 font-bold text-xs text-sulley flex items-center gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center"><i class="fa-solid fa-user text-[10px]"></i></div>
+                                        Usuario de prueba #1
+                                    </div>
+                                </div>
+                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm relative h-full flex flex-col justify-center">
+                                    <i class="fa-solid fa-quote-left absolute text-4xl text-sulleyLight opacity-10 top-3 left-3"></i>
+                                    <p class="italic text-sm text-gray-600 relative z-10">"El contraste de los textos es muy bueno, pero los botones flotantes marean un poco al inicio."</p>
+                                    <div class="mt-4 font-bold text-xs text-sulley flex items-center gap-2">
+                                        <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center"><i class="fa-solid fa-user text-[10px]"></i></div>
+                                        Usuario de prueba #2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fase 4 -->
+                    <div class="timeline-item relative">
+                        <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">4</div>
+                        <h3 class="text-2xl font-bold mb-4">Fase 4: POV & Gameplay</h3>
+                        <p class="mb-4 text-gray-600">Versión estable e iterada del proyecto tras aplicar el feedback de los testing.</p>
+                        <div class="video-responsive bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center relative w-full border-4 border-sulley shadow-lg">
+                            <i class="fa-brands fa-youtube text-7xl text-red-600 cursor-pointer hover:scale-110 transition-transform"></i>
+                            <span class="absolute bottom-4 left-4 text-white text-sm font-medium bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm"><i class="fa-solid fa-gamepad mr-2"></i>Gameplay VR Definitivo</span>
+                        </div>
+                    </div>
+
+                    <!-- Fase 5 -->
+                    <div class="timeline-item relative">
+                        <div class="absolute -left-[42px] md:-left-[58px] bg-mike w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">
+                            <i class="fa-solid fa-flag-checkered"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Fase 5: Evaluación Final</h3>
+                        <p class="mb-4 text-gray-600">Sustentación del proyecto demostrando el cumplimiento de las heurísticas.</p>
+                        <div class="video-responsive bg-slate-800 rounded-xl overflow-hidden flex items-center justify-center relative shadow-md">
+                            <i class="fa-solid fa-users-viewfinder text-5xl text-white/40"></i>
+                            <span class="absolute bottom-4 left-4 text-white text-sm font-medium bg-black/60 px-3 py-1 rounded backdrop-blur-sm">Video de la Sustentación</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN C: Proyecto 2 -->
+        <!-- Principio 12: Ayuda predictiva (Haciendo visible el futuro del sistema) -->
+        <!-- Principio 2: Evitar límites absolutos (Utilizando el estado de saturación y escala de grises para comunicar visualmente el estado de "En construcción" o deshabilitado temporalmente) -->
+        <section id="mobile-project" class="bg-gray-100 py-24 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 opacity-80">
+                    <h2 class="text-4xl font-bold text-gray-500 mb-4 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-mobile-screen"></i> Proyecto 2: App Móvil
+                    </h2>
+                    <span class="inline-block bg-gray-400 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                        <i class="fa-solid fa-person-digging mr-1"></i> PRÓXIMAMENTE
+                    </span>
+                </div>
+
+                <!-- Contenedor atenuado que guarda el espacio mental del usuario -->
+                <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-sm border-2 border-dashed border-gray-300 text-center grayscale opacity-70 transition duration-500 hover:grayscale-0 hover:opacity-100 hover:border-solid hover:border-mike">
+                    <div class="text-6xl text-gray-300 mb-6">
+                        <i class="fa-solid fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-600 mb-3">En fase de planeación</h3>
+                    <p class="text-gray-500 mb-8 max-w-lg mx-auto">
+                        Actualmente estamos realizando investigación de usuarios, levantamiento de requerimientos y elaborando nuestros primeros wireframes para este proyecto móvil. 
+                        Pronto publicaremos nuestras actualizaciones.
+                    </p>
+                    <!-- Principio 4: Redundancia en botones (Ícono + texto) e indicación clara del estado -->
+                    <button class="bg-gray-300 text-gray-600 font-bold py-3 px-8 rounded-lg cursor-not-allowed flex items-center justify-center gap-2 mx-auto">
+                        <i class="fa-solid fa-lock"></i> Contenido Bloqueado
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-randall text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            <div class="flex items-center gap-3 mb-6 text-sulleyLight">
+                <i class="fa-solid fa-door-open text-3xl"></i>
+                <span class="font-bold text-2xl tracking-tight">BARBEROS <span class="text-mike">INC.</span></span>
+            </div>
+            <p class="opacity-80 text-sm max-w-md mx-auto">Portafolio elaborado para el curso de Interacción Humano-Computador, aplicando principios de diseño de UI/UX, accesibilidad y leyes de la Gestalt.</p>
+            <div class="mt-8 pt-8 border-t border-white/10 w-full max-w-md flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-sulley transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-sulley transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="opacity-60 text-xs mt-6">&copy; 2024 Barberos Inc. Todos los sustos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
