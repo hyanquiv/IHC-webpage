@@ -149,78 +149,349 @@
                 <!-- Principio 3: Procesamiento top-down (Línea de tiempo vertical para mostrar un progreso cronológico lógico) -->
                 <div class="timeline-container relative border-l-4 border-sulleyLight ml-4 md:ml-12 pl-8 md:pl-12 space-y-16">
                     
-                    <!-- Fase 1 -->
+                    <!-- Fase 1: Lluvia de ideas -->
+                    <!-- Principio 3: Procesamiento top-down (Progresión cronológica y estructuración jerárquica) -->
+                    <!-- Principio 1: Legibilidad y contraste (Texto de alto contraste y visualización nítida) -->
+                    <!-- Principio 11: Reemplazamiento de memoria por conocimiento en el mundo (Artefactos visuales explícitos) -->
                     <div id="fase1" class="timeline-item relative scroll-mt-24">
                         <!-- Nodo visual del stepper -->
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">1</div>
-                        <h3 class="text-2xl font-bold mb-4">Fase 1: Lluvia de ideas</h3>
-                        <p class="mb-4 text-gray-600">Definición del problema, modelo mental y sesión de ideación colaborativa.</p>
-                        <div class="bg-cream p-4 rounded-xl border border-gray-200">
-                            <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden group">
-                                <i class="fa-solid fa-image text-5xl text-gray-400"></i>
-                                <span class="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded text-sm backdrop-blur-sm">Tablero de Miro</span>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h3 class="text-2xl font-bold text-randall">Fase 1: Lluvia de ideas</h3>
+                            <span class="bg-sulley/10 text-sulley font-bold text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+                                <i class="fa-solid fa-brain"></i> Ideación y Conceptualización
+                            </span>
+                        </div>
+                        <p class="mb-4 text-gray-700 font-medium leading-relaxed bg-cream p-4 rounded-xl border-l-4 border-sulley border-t border-r border-b border-gray-200">
+                            Idea conceptual: Incluir dilemas morales donde el jugador decide quién entra a la zona segura.
+                        </p>
+                        <div class="bg-white p-3 md:p-4 rounded-2xl border border-gray-200 shadow-sm overflow-hidden group">
+                            <div class="overflow-hidden rounded-xl border border-gray-100 bg-slate-50 flex items-center justify-center">
+                                <img src="img/LLUVIA-DE-IDEAS-VR.png" alt="Tablero de lluvia de ideas" class="w-full h-auto max-h-[580px] object-contain rounded-lg shadow-sm hover:scale-[1.01] transition-transform duration-300">
                             </div>
-                            <p class="text-sm text-center mt-3 text-gray-500 italic">Mapa mental y afinidad de ideas para el entorno virtual.</p>
                         </div>
                     </div>
 
-                    <!-- Fase 2 -->
+                    <!-- Fase 2: Storytelling & Bocetos -->
+                    <!-- Principio 11: Reemplazamiento de la memoria con información visual (Navegación entre bocetos muy evidente) -->
+                    <!-- Principio 4: Mejora por redundancia (Controles con flechas grandes, íconos intuitivos y etiquetas) -->
+                    <!-- Principio 9: Compatibilidad por proximidad (Cada boceto está agrupado con su contexto narrativo) -->
+                    <!-- Principio 5 y 6 (Gestalt): Similitud y Continuidad en la secuencia de inspección -->
                     <div id="fase2" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">2</div>
-                        <h3 class="text-2xl font-bold mb-4">Fase 2: Storytelling & Bocetos</h3>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h3 class="text-2xl font-bold text-randall">Fase 2: Storytelling &amp; Bocetos</h3>
+                            <span class="bg-mike/20 text-mikeHover font-bold text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+                                <i class="fa-solid fa-route"></i> Flujo Narrativo VR
+                            </span>
+                        </div>
                         <p class="mb-4 text-gray-600">Diseño en papel de los escenarios y primeros flujos de usuario.</p>
                         
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <!-- Principio 11: Reemplazamiento de memoria por conocimiento en el mundo (Controles visuales explícitos < > en lugar de requerir que el usuario adivine gestos) -->
-                            <div class="carousel-container relative bg-white p-2 rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                                <div class="carousel-track flex transition-transform duration-300 ease-in-out h-full" id="carouselTrack">
-                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-100 flex items-center justify-center rounded-lg">
-                                        <div class="text-center">
-                                            <i class="fa-solid fa-pencil text-4xl text-gray-400 mb-2"></i>
-                                            <p class="font-medium text-gray-500">Boceto 1: Lobby</p>
+                        <!-- Carrusel Interactivo de Storytelling (Organizado en 4 slides principales) -->
+                        <div class="carousel-container relative bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
+                            
+                            <!-- Controles visuales (Principio 4: Mejora por redundancia - Flechas grandes e íconos intuitivos) -->
+                            <button id="btnPrev" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-sulley hover:bg-sulleyLight text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition transform hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-4 focus:ring-sulleyLight/50" aria-label="Boceto anterior" title="Boceto anterior">
+                                <i class="fa-solid fa-chevron-left text-xl md:text-2xl"></i>
+                            </button>
+                            <button id="btnNext" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-sulley hover:bg-sulleyLight text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition transform hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-4 focus:ring-sulleyLight/50" aria-label="Siguiente boceto" title="Siguiente boceto">
+                                <i class="fa-solid fa-chevron-right text-xl md:text-2xl"></i>
+                            </button>
+
+                            <!-- Track del Carrusel -->
+                            <div class="carousel-track flex transition-transform duration-300 ease-in-out h-full" id="carouselTrack">
+                                
+                                <!-- SLIDE 1: INTRODUCCIÓN -->
+                                <div class="carousel-slide flex-none w-full p-4 sm:p-6 md:p-8 flex flex-col justify-between bg-white">
+                                    <div>
+                                        <!-- Encabezado del Slide (Principio 11: Información visual en el mundo) -->
+                                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-7 h-7 rounded-full bg-sulley text-white flex items-center justify-center text-xs font-bold shadow-sm">1</span>
+                                                <h4 class="text-xl font-bold text-sulley">Slide 1: Introducción</h4>
+                                            </div>
+                                            <span class="bg-sulley/10 text-sulley text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                                                <i class="fa-solid fa-door-open"></i> Contexto Inicial
+                                            </span>
+                                        </div>
+
+                                        <!-- Imagen: Introducción -->
+                                        <div class="bg-slate-50 rounded-xl p-2 sm:p-4 border border-gray-200 flex items-center justify-center mb-4">
+                                            <img src="img/Storytelling-VR/01 intro.jpg" alt="Introducción" class="w-full max-h-[380px] md:max-h-[420px] object-contain rounded-lg shadow-sm border border-gray-100">
                                         </div>
                                     </div>
-                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-200 flex items-center justify-center rounded-lg">
-                                        <div class="text-center">
-                                            <i class="fa-solid fa-pen-ruler text-4xl text-gray-400 mb-2"></i>
-                                            <p class="font-medium text-gray-500">Boceto 2: Nivel Principal</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide flex-none w-full aspect-video bg-gray-300 flex items-center justify-center rounded-lg">
-                                        <div class="text-center">
-                                            <i class="fa-solid fa-compass-drafting text-4xl text-gray-500 mb-2"></i>
-                                            <p class="font-medium text-gray-600">Boceto 3: Menú de Pausa</p>
-                                        </div>
+
+                                    <!-- Texto descriptivo tal cual especificado -->
+                                    <div class="bg-cream p-4 rounded-xl border-l-4 border-sulley border-t border-r border-b border-gray-200">
+                                        <p class="text-randall font-medium text-sm md:text-base leading-relaxed">
+                                            <i class="fa-solid fa-quote-left text-sulley mr-2 opacity-40"></i>Mundo donde personas ven a través de una reja una zona segura que se detalla a través de un cartel.<i class="fa-solid fa-quote-right text-sulley ml-2 opacity-40"></i>
+                                        </p>
                                     </div>
                                 </div>
-                                
-                                <!-- Controles visuales (botones) -->
-                                <button id="btnPrev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-sulley/90 hover:bg-sulley text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sulley" aria-label="Boceto anterior">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button id="btnNext" class="absolute right-4 top-1/2 -translate-y-1/2 bg-sulley/90 hover:bg-sulley text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sulley" aria-label="Siguiente boceto">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                                
-                                <div class="absolute bottom-4 left-0 right-0 text-center z-10" id="carouselIndicators">
-                                    <button class="inline-block w-6 h-2 rounded-full bg-sulley mx-1 indicator active focus:outline-none" aria-label="Ir a boceto 1"></button>
-                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a boceto 2"></button>
-                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a boceto 3"></button>
+
+                                <!-- SLIDE 2: PACIENTE 1 (APROBADO) -->
+                                <div class="carousel-slide flex-none w-full p-4 sm:p-6 md:p-8 flex flex-col justify-between bg-white">
+                                    <div>
+                                        <!-- Encabezado del Slide -->
+                                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-7 h-7 rounded-full bg-mike text-white flex items-center justify-center text-xs font-bold shadow-sm">2</span>
+                                                <h4 class="text-xl font-bold text-randall">Slide 2: Paciente 1 (Aprobado)</h4>
+                                            </div>
+                                            <!-- Principio 4: Redundancia (Color + Ícono + Texto) -->
+                                            <span class="bg-mike/20 text-mikeHover text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                                                <i class="fa-solid fa-circle-check"></i> Veredicto: Aprobado
+                                            </span>
+                                        </div>
+
+                                        <!-- Secuencia de Bocetos en Grilla (Principio 11: Reemplazamiento de memoria por información visual) -->
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4">
+                                            <!-- Boceto 02_a -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-sulley bg-sulley/10 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-user"></i> 1. Llegada
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/02_a paciente 1.jpg" alt="Paciente 1 - Llegada" class="w-full h-40 sm:h-48 md:h-52 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Llegada del paciente</p>
+                                            </div>
+
+                                            <!-- Boceto 02_b -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-hand-dots"></i> 2. Brazo mordido
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/02_b paciente 1 brazo mordido.jpg" alt="Paciente 1 - Brazo mordido" class="w-full h-40 sm:h-48 md:h-52 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Revisión de mordida</p>
+                                            </div>
+
+                                            <!-- Boceto 02_c -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-heart-pulse"></i> 3. Pulso acelerado
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/02_c paciente 1 pulso acelerado.jpg" alt="Paciente 1 - Pulso acelerado" class="w-full h-40 sm:h-48 md:h-52 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Signos vitales altos</p>
+                                            </div>
+
+                                            <!-- Boceto 02_d -->
+                                            <div class="bg-slate-50 rounded-xl border border-mike/40 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-mikeHover bg-mike/20 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-stamp"></i> 4. Aceptado
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/02_d paciente 1 aceptado.jpg" alt="Paciente 1 - Aceptado" class="w-full h-40 sm:h-48 md:h-52 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-mikeHover font-bold mt-1.5">Sello: Aprobado</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Texto descriptivo tal cual especificado -->
+                                    <div class="bg-cream p-4 rounded-xl border-l-4 border-mike border-t border-r border-b border-gray-200">
+                                        <p class="text-randall font-medium text-sm md:text-base leading-relaxed">
+                                            <i class="fa-solid fa-quote-left text-mike mr-2 opacity-40"></i>El paciente llega asegurando que fue mordido por un perro pero que está sano. En la revisión del brazo obviamente está mordido y tiene el pulso acelerado. Paciente 1 aprobado (el protagonista se cree el cuento).<i class="fa-solid fa-quote-right text-mike ml-2 opacity-40"></i>
+                                        </p>
+                                    </div>
                                 </div>
+
+                                <!-- SLIDE 3: PACIENTE 2 (RECHAZADA) -->
+                                <div class="carousel-slide flex-none w-full p-4 sm:p-6 md:p-8 flex flex-col justify-between bg-white">
+                                    <div>
+                                        <!-- Encabezado del Slide -->
+                                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-7 h-7 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-bold shadow-sm">3</span>
+                                                <h4 class="text-xl font-bold text-randall">Slide 3: Paciente 2 (Rechazada)</h4>
+                                            </div>
+                                            <!-- Principio 4: Redundancia (Color + Ícono + Texto) -->
+                                            <span class="bg-rose-100 text-rose-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                                                <i class="fa-solid fa-circle-xmark"></i> Veredicto: Rechazada
+                                            </span>
+                                        </div>
+
+                                        <!-- Secuencia de Bocetos en Grilla (5 bocetos) -->
+                                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-4">
+                                            <!-- Boceto 03_a -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-sulley bg-sulley/10 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-user"></i> 1. Llegada
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/03_a paciente 2.jpg" alt="Paciente 2 - Llegada" class="w-full h-32 sm:h-40 md:h-44 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Llegada y aspecto pálido</p>
+                                            </div>
+
+                                            <!-- Boceto 03_b -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-sulley bg-sulley/10 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-hand"></i> 2. Brazo sano
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/03_b paciente 2 brazo intacto.jpg" alt="Paciente 2 - Brazo intacto" class="w-full h-32 sm:h-40 md:h-44 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Brazo intacto</p>
+                                            </div>
+
+                                            <!-- Boceto 03_c -->
+                                            <div class="bg-slate-50 rounded-xl border border-gray-200 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-sulley bg-sulley/10 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-heart-pulse"></i> 3. Pulso normal
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/03_c paciente 2 pulso normal.jpg" alt="Paciente 2 - Pulso normal" class="w-full h-32 sm:h-40 md:h-44 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-gray-500 font-medium mt-1.5">Signos normales</p>
+                                            </div>
+
+                                            <!-- Boceto 03_d -->
+                                            <div class="bg-slate-50 rounded-xl border border-amber-300 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-eye"></i> 4. Ojos rojos
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/03_d paciente 2 ojos rojos.jpg" alt="Paciente 2 - Ojos rojos" class="w-full h-32 sm:h-40 md:h-44 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-amber-700 font-semibold mt-1.5">Ojos rojos anómalos</p>
+                                            </div>
+
+                                            <!-- Boceto 03_e -->
+                                            <div class="bg-slate-50 rounded-xl border border-rose-300 p-2 flex flex-col shadow-sm">
+                                                <div class="flex items-center justify-between mb-1.5 px-1">
+                                                    <span class="text-[11px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                                        <i class="fa-solid fa-ban"></i> 5. Denegado
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/03_e paciente 2 denegado.jpg" alt="Paciente 2 - Denegado" class="w-full h-32 sm:h-40 md:h-44 object-contain rounded-lg bg-white border border-gray-100">
+                                                <p class="text-[11px] text-center text-rose-700 font-bold mt-1.5">Sello: Rechazada</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Texto descriptivo tal cual especificado -->
+                                    <div class="bg-cream p-4 rounded-xl border-l-4 border-rose-500 border-t border-r border-b border-gray-200">
+                                        <p class="text-randall font-medium text-sm md:text-base leading-relaxed">
+                                            <i class="fa-solid fa-quote-left text-rose-500 mr-2 opacity-40"></i>Llega con ojos extrañamente rojos diciendo que no pudo dormir y se pone pálida. El cuerpo está sin heridas y el pulso es normal. Paciente 2 rechazada.<i class="fa-solid fa-quote-right text-rose-500 ml-2 opacity-40"></i>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 4: LOS FINALES -->
+                                <div class="carousel-slide flex-none w-full p-4 sm:p-6 md:p-8 flex flex-col justify-between bg-white">
+                                    <div>
+                                        <!-- Encabezado del Slide -->
+                                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-7 h-7 rounded-full bg-randall text-white flex items-center justify-center text-xs font-bold shadow-sm">4</span>
+                                                <h4 class="text-xl font-bold text-randall">Slide 4: Los Finales</h4>
+                                            </div>
+                                            <!-- Principio 4: Redundancia (Color + Ícono + Texto) -->
+                                            <span class="bg-randall/10 text-randall text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                                                <i class="fa-solid fa-code-branch"></i> Desenlace Ramificado
+                                            </span>
+                                        </div>
+
+                                        <!-- Comparativa Lado a Lado (Principio 11 y Gestalt: Similitud y Contraste) -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4">
+                                            <!-- Final Bueno -->
+                                            <div class="bg-slate-50 rounded-2xl border-2 border-mike/40 p-3 sm:p-4 shadow-sm flex flex-col">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="bg-mike/20 text-mikeHover font-bold text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+                                                        <i class="fa-solid fa-shield-halved"></i> Final 1: Bueno
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/04_a final bueno.jpg" alt="Final 1: Zona segura protegida" class="w-full h-48 sm:h-56 md:h-64 object-contain rounded-xl bg-white border border-gray-100 shadow-inner">
+                                                <p class="text-xs text-center text-mikeHover font-bold mt-2.5">Zona segura protegida</p>
+                                            </div>
+
+                                            <!-- Final Malo -->
+                                            <div class="bg-slate-50 rounded-2xl border-2 border-randall/30 p-3 sm:p-4 shadow-sm flex flex-col">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="bg-randall/10 text-randall font-bold text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+                                                        <i class="fa-solid fa-biohazard"></i> Final 2: Malo
+                                                    </span>
+                                                </div>
+                                                <img src="img/Storytelling-VR/04_b final malo.jpg" alt="Final 2: Zona segura comprometida" class="w-full h-48 sm:h-56 md:h-64 object-contain rounded-xl bg-white border border-gray-100 shadow-inner">
+                                                <p class="text-xs text-center text-randall font-bold mt-2.5">Zona segura comprometida</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Texto descriptivo tal cual especificado -->
+                                    <div class="bg-cream p-4 rounded-xl border-l-4 border-randall border-t border-r border-b border-gray-200">
+                                        <p class="text-randall font-medium text-sm md:text-base leading-relaxed">
+                                            <i class="fa-solid fa-quote-left text-randall mr-2 opacity-40"></i>Final 1: Zona segura protegida. Final 2: Zona segura comprometida, gente infectada adentro.<i class="fa-solid fa-quote-right text-randall ml-2 opacity-40"></i>
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                             
-                            <!-- Video Storytelling: Usuario interactuando con bocetos -->
-                            <div class="video-responsive bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                            <!-- Barra de Navegación e Indicadores Inferiores (Principio 11: Reemplazamiento de memoria y Principio 4: Redundancia) -->
+                            <div class="bg-slate-50 border-t border-gray-200 px-4 py-3 flex items-center justify-between flex-wrap gap-3">
+                                <!-- Contador de Estado Visible -->
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-bold text-sulley bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                                        <i class="fa-solid fa-layer-group text-mike"></i>
+                                        <span>Boceto <span id="currentSlideNum">1</span> de 4</span>
+                                    </span>
+                                </div>
+
+                                <!-- Indicadores de Posición Interactivos (Puntos/Barras) -->
+                                <div class="flex items-center justify-center gap-2" id="carouselIndicators">
+                                    <button class="inline-block w-6 h-2 rounded-full bg-sulley mx-1 indicator active focus:outline-none" aria-label="Ir a Slide 1: Introducción" title="1. Introducción"></button>
+                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a Slide 2: Paciente 1 (Aprobado)" title="2. Paciente 1 (Aprobado)"></button>
+                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a Slide 3: Paciente 2 (Rechazada)" title="3. Paciente 2 (Rechazada)"></button>
+                                    <button class="inline-block w-2 h-2 rounded-full bg-gray-300 mx-1 indicator focus:outline-none" aria-label="Ir a Slide 4: Los Finales" title="4. Los Finales"></button>
+                                </div>
+
+                                <!-- Acceso rápido directo (Principio 8: Minimizar coste de acceso) -->
+                                <div class="hidden md:flex items-center gap-1 text-xs font-semibold text-gray-500">
+                                    <span class="text-gray-400 mr-1"><i class="fa-solid fa-compass text-sulley"></i> Ir a:</span>
+                                    <button type="button" class="slide-jump-btn hover:text-sulley px-2 py-1 rounded hover:bg-white transition" data-index="0">Intro</button>
+                                    <span class="text-gray-300">·</span>
+                                    <button type="button" class="slide-jump-btn hover:text-sulley px-2 py-1 rounded hover:bg-white transition" data-index="1">Paciente 1</button>
+                                    <span class="text-gray-300">·</span>
+                                    <button type="button" class="slide-jump-btn hover:text-sulley px-2 py-1 rounded hover:bg-white transition" data-index="2">Paciente 2</button>
+                                    <span class="text-gray-300">·</span>
+                                    <button type="button" class="slide-jump-btn hover:text-sulley px-2 py-1 rounded hover:bg-white transition" data-index="3">Finales</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Video Storytelling: Usuario interactuando con bocetos (Evidencia complementaria del proceso de testeo) -->
+                        <div class="mt-8 bg-cream p-5 md:p-6 rounded-2xl border border-gray-200 shadow-sm">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                <h4 class="text-lg font-bold text-sulley flex items-center gap-2">
+                                    <i class="fa-solid fa-film text-mike"></i> Video Storytelling: Usuario interactuando con bocetos
+                                </h4>
+                                <span class="bg-sulley/10 text-sulley text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-play"></i> Testing con Prototipo en Papel
+                                </span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-4">Registro en video donde un usuario interactúa con la secuencia de bocetos de papel para validar el modelo mental y la comprensión del flujo narrativo.</p>
+                            <div class="video-responsive bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-gray-200 max-w-4xl mx-auto">
                                 <iframe src="https://drive.google.com/file/d/1s8tIeFSxjwySDuycbOZH4vHPyWKQjUb2/preview" 
                                         title="Storytelling: Usuario interactuando con bocetos" 
                                         allow="autoplay" 
                                         allowfullscreen></iframe>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Fase 3 -->
                     <!-- Principio 5: Similitud - Agrupando de manera distinta elementos de UI diferentes (Testimonios con diseño de tarjeta y comillas vs Video) -->
+                    <!-- Principio 1: Legibilidad - Alto contraste entre el texto y el fondo para garantizar la óptima lectura de los testimonios -->
+                    <!-- Principio 4: Mejora por redundancia - Íconos de comillas visuales destacados (Verde Mike / Púrpura Randall) + comillas tipográficas + formato de cita -->
+                    <!-- Ley de Proximidad (Gestalt) - Agrupación espacial inmediata entre el contenido de la cita y el perfil/carrera del estudiante evaluador -->
                     <div id="fase3" class="timeline-item relative scroll-mt-24">
                         <div class="absolute -left-[42px] md:-left-[58px] bg-sulley w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-white font-bold border-4 border-white shadow-md">3</div>
                         <h3 class="text-2xl font-bold mb-4">Fase 3: Testing Temprano (Campus)</h3>
@@ -233,21 +504,56 @@
                                         allow="autoplay" 
                                         allowfullscreen></iframe>
                             </div>
-                            <div class="flex flex-col gap-4">
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm relative h-full flex flex-col justify-center">
-                                    <i class="fa-solid fa-quote-left absolute text-4xl text-sulleyLight opacity-10 top-3 left-3"></i>
-                                    <p class="italic text-sm text-gray-600 relative z-10">"La navegación inicial fue confusa, no encontraba cómo abrir el inventario."</p>
-                                    <div class="mt-4 font-bold text-xs text-sulley flex items-center gap-2">
-                                        <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center"><i class="fa-solid fa-user text-[10px]"></i></div>
-                                        Usuario de prueba #1
+                            <div class="flex flex-col gap-4 h-full">
+                                <!-- Testimonio 1: Estudiante de Ing. Química -->
+                                <!-- Principio 1: Legibilidad (Contraste óptimo) | Principio 4: Mejora por redundancia (Ícono verde Mike + comillas) | Ley de Proximidad (Agrupación cita-autor) -->
+                                <div class="bg-white p-5 rounded-xl border border-gray-200 border-l-4 border-l-mike shadow-sm hover:shadow-md transition-shadow relative flex-1 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="w-8 h-8 rounded-lg bg-mike/15 text-mike flex items-center justify-center text-sm shadow-xs" title="Cita de usuario">
+                                                <i class="fa-solid fa-quote-left"></i>
+                                            </span>
+                                            <span class="text-[11px] font-bold uppercase tracking-wider text-mike bg-mike/10 px-2.5 py-0.5 rounded-full">Testimonio 1</span>
+                                        </div>
+                                        <blockquote class="text-slate-800 font-medium italic text-sm sm:text-base leading-relaxed">
+                                            "El juego en sí no te indica cómo jugarlo, debes ir tanteando y averiguando cómo funcionan los controles."
+                                        </blockquote>
+                                    </div>
+                                    <!-- Ley de Proximidad: Agrupación visual directa del perfil/carrera con la cita -->
+                                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-mike/20 text-mikeHover flex items-center justify-center text-xs shrink-0 shadow-inner">
+                                            <i class="fa-solid fa-flask" title="Ingeniería Química"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-xs sm:text-sm text-randall leading-tight">Estudiante de Ing. Química</p>
+                                            <p class="text-[11px] text-gray-500">Prueba con headset Oculus</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm relative h-full flex flex-col justify-center">
-                                    <i class="fa-solid fa-quote-left absolute text-4xl text-sulleyLight opacity-10 top-3 left-3"></i>
-                                    <p class="italic text-sm text-gray-600 relative z-10">"El contraste de los textos es muy bueno, pero los botones flotantes marean un poco al inicio."</p>
-                                    <div class="mt-4 font-bold text-xs text-sulley flex items-center gap-2">
-                                        <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center"><i class="fa-solid fa-user text-[10px]"></i></div>
-                                        Usuario de prueba #2
+
+                                <!-- Testimonio 2: Estudiante de Ing. Civil -->
+                                <!-- Principio 1: Legibilidad (Contraste óptimo) | Principio 4: Mejora por redundancia (Ícono púrpura Randall + comillas) | Ley de Proximidad (Agrupación cita-autor) -->
+                                <div class="bg-white p-5 rounded-xl border border-gray-200 border-l-4 border-l-randall shadow-sm hover:shadow-md transition-shadow relative flex-1 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="w-8 h-8 rounded-lg bg-randall/10 text-randall flex items-center justify-center text-sm shadow-xs" title="Cita de usuario">
+                                                <i class="fa-solid fa-quote-left"></i>
+                                            </span>
+                                            <span class="text-[11px] font-bold uppercase tracking-wider text-randall bg-randall/10 px-2.5 py-0.5 rounded-full">Testimonio 2</span>
+                                        </div>
+                                        <blockquote class="text-slate-800 font-medium italic text-sm sm:text-base leading-relaxed">
+                                            "Me gustó que haya botones y también interacción con los gestos de las manos, normal podía hacerlo funcionar."
+                                        </blockquote>
+                                    </div>
+                                    <!-- Ley de Proximidad: Agrupación visual directa del perfil/carrera con la cita -->
+                                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-randall/15 text-randall flex items-center justify-center text-xs shrink-0 shadow-inner">
+                                            <i class="fa-solid fa-helmet-safety" title="Ingeniería Civil"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-xs sm:text-sm text-randall leading-tight">Estudiante de Ing. Civil</p>
+                                            <p class="text-[11px] text-gray-500">Prueba con headset Oculus</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

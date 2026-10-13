@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 indicator.classList.add('w-2', 'bg-gray-300');
             }
         });
+
+        // Principio 11: Reemplazamiento de memoria con información visual (Actualizar contador de slide)
+        const currentSlideNum = document.getElementById('currentSlideNum');
+        if (currentSlideNum) {
+            currentSlideNum.textContent = (index + 1);
+        }
     };
 
     // Evento: Botón Siguiente
@@ -50,12 +56,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Evento: Click directo en indicadores
-    // Principio 8: Minimizar coste de acceso. Permite ir al boceto 3 sin tener que pasar por el 2.
+    // Principio 8: Minimizar coste de acceso. Permite ir a cualquier boceto sin pasar por los intermedios.
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             currentIndex = index;
             updateCarousel(currentIndex);
         });
+    });
+
+    // Evento: Click en botones de acceso rápido directo (Tabs de navegación)
+    const jumpBtns = document.querySelectorAll('.slide-jump-btn');
+    jumpBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const idx = parseInt(btn.getAttribute('data-index'), 10);
+            if (!isNaN(idx) && idx >= 0 && idx < slides.length) {
+                currentIndex = idx;
+                updateCarousel(currentIndex);
+            }
+        });
+    });
+
+    // Principio 8: Minimizar coste de acceso (Navegación por teclado accesible con flechas izquierda/derecha)
+    document.addEventListener('keydown', (e) => {
+        const carousel = document.querySelector('.carousel-container');
+        if (!carousel) return;
+        const rect = carousel.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                updateCarousel(currentIndex);
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                updateCarousel(currentIndex);
+            }
+        }
     });
 
 
